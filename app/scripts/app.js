@@ -1,5 +1,6 @@
+'use strict';
 (function(){
-    angular.module('starter', ['ionic']).run(function ($ionicPlatform) {
+    var app = angular.module('DrugDoseFrameworkApp', ['ionic']).run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -16,4 +17,29 @@
             }
         });
     });
+    
+    app.controller('DrugListCtrl', function($scope) {
+        
+        $scope.shouldShowDelete = false;
+        $scope.shouldShowReorder = false;
+        $scope.listCanSwipe = true;
+        
+        $scope.drugs = drugs;
+    });
+    
+    var drugs = [
+        {
+            name: 'Drug1',
+            description: 'Description of a Drug1'
+        },
+        {
+            name: 'Drug2',
+            description: 'Description of a Drug2'
+        },
+        {
+            name: 'Drug3',
+            description: 'Description of a Drug3'
+        }
+    ];
+    
 })();
