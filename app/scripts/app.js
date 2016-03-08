@@ -18,28 +18,19 @@
         });
     });
     
-    app.controller('DrugListCtrl', function($scope) {
+    app.controller('DrugListCtrl', function($scope, $http) {
         
         $scope.shouldShowDelete = false;
         $scope.shouldShowReorder = false;
         $scope.listCanSwipe = true;
+    
+        $scope.drugs = [];
         
-        $scope.drugs = drugs;
+        $http.get('data/example.json').success(function(data) {
+            $scope.drugs = data;
+        });
+        
     });
     
-    var drugs = [
-        {
-            name: 'Drug one',
-            description: 'Description of a Drug1'
-        },
-        {
-            name: 'Drug two',
-            description: 'Description of a Drug2'
-        },
-        {
-            name: 'Drug three',
-            description: 'Description of a Drug3'
-        }
-    ];
     
 })();
