@@ -29,15 +29,15 @@
     
     var drugs = [
         {
-            name: 'Drug1',
+            name: 'Drug one',
             description: 'Description of a Drug1'
         },
         {
-            name: 'Drug2',
+            name: 'Drug two',
             description: 'Description of a Drug2'
         },
         {
-            name: 'Drug3',
+            name: 'Drug three',
             description: 'Description of a Drug3'
         }
     ];

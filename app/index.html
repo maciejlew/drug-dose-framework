@@ -44,12 +44,18 @@
         <ion-header-bar class="bar-stable">
             <h1 class="title">Drug Dose Framework</h1>
         </ion-header-bar>
-        <ion-content>
-            <ion-list ng-controller="DrugListCtrl"
+        <ion-content ng-controller="DrugListCtrl">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Type drug name</span>
+                    <input type="text" placeholder="Type drug name" ng-model="query">
+                </label>
+            </div>
+            <ion-list
                 show-delete="shouldShowDelete"
                 show-reorder="shouldShowReorder"
                 can-swipe="listCanSwipe">
-                <ion-item ng-repeat="drug in drugs">
+                <ion-item ng-repeat="drug in drugs | filter: query">
                     <h2>{{drug.name}}</h2>
                     <p>{{drug.description}}</p>
                     <button class="button button-positive item-button-right">
