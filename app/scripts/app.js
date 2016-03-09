@@ -1,6 +1,9 @@
 'use strict';
 (function(){
-    var app = angular.module('DrugDoseFrameworkApp', ['ionic']).run(function ($ionicPlatform) {
+    
+    var dependencies = ['ionic', 'ngRoute', 'DrugDoseFrameworkControllers'];
+    
+    var app = angular.module('DrugDoseFrameworkApp', dependencies).run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -18,19 +21,13 @@
         });
     });
     
-    app.controller('DrugListCtrl', function($scope, $http) {
-        
-        $scope.shouldShowDelete = false;
-        $scope.shouldShowReorder = false;
-        $scope.listCanSwipe = true;
-    
-        $scope.drugs = [];
-        
-        $http.get('data/example.json').success(function(data) {
-            $scope.drugs = data;
+    app.config(['$routeProvider', function ($routeProvider) {
+        $routeProvider.when('/drugs', {
+            templateUrl: 'partials/drug-list.html',
+            controller: 'DrugListCtrl'
+        }).otherwise({
+            redirectTo: '/drugs'
         });
-        
-    });
-    
+    }]);
     
 })();

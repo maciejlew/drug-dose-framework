@@ -7,7 +7,7 @@ describe('Drug Dose Framework controllers', function() {
         
         var scope, $httpBackend;
         
-        beforeEach(module('DrugDoseFrameworkApp'));
+        beforeEach(module('DrugDoseFrameworkControllers'));
         beforeEach(inject(function (_$httpBackend_, $rootScope, $controller) {
             $httpBackend = _$httpBackend_;
             $httpBackend.expectGET('data/example.json').respond(example);
