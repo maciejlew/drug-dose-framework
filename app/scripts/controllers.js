@@ -15,3 +15,17 @@ drugDoseFrameworkControllers.controller('DrugListCtrl', function($scope, $http) 
     });
 
 });
+
+drugDoseFrameworkControllers.controller('DrugDetailsCtrl', function($scope, $routeParams, $http) {
+        
+    $scope.shouldShowDelete = false;
+    $scope.shouldShowReorder = false;
+    $scope.listCanSwipe = true;
+
+    $scope.drug = null;
+
+    $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
+        $scope.drug = data;
+    });
+
+});

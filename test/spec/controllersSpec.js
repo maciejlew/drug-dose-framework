@@ -25,6 +25,28 @@ describe('Drug Dose Framework controllers', function() {
 
     });
     
+    describe('DrugDetailsCtrl', function () {
+        
+        var scope, $httpBackend;
+
+        beforeEach(module('ngRoute'));
+        beforeEach(module('DrugDoseFrameworkControllers'));
+        beforeEach(inject(function (_$httpBackend_, $rootScope, $controller, $routeParams) {
+            $httpBackend = _$httpBackend_;
+            $httpBackend.expectGET('data/xyz.json').respond({id: 'xyz'});
+
+            $routeParams.drugId = 'xyz';
+            scope = $rootScope.$new();
+            $controller('DrugDetailsCtrl', {$scope: scope});
+        }));
+
+        it('should fetch drug detail', function () {
+            expect(scope.drug).toBeNull();
+            $httpBackend.flush();
+            expect(scope.drug).toEqual({id: 'xyz'});
+        });
+    });
+    
     var example = [
         {
             name: "Drug one",

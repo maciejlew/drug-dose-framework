@@ -25,6 +25,9 @@
         $routeProvider.when('/drugs', {
             templateUrl: 'partials/drug-list.html',
             controller: 'DrugListCtrl'
+        }).when('/drugs/:drugId', {
+            templateUrl: 'partials/drug-details.html',
+            controller: 'DrugDetailsCtrl'
         }).otherwise({
             redirectTo: '/drugs'
         });
