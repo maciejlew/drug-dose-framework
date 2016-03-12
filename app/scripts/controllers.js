@@ -13,6 +13,14 @@ drugDoseFrameworkControllers.controller('DrugListCtrl', function($scope, $http) 
     $http.get('data/example.json').success(function(data) {
         $scope.drugs = data;
     });
+    
+    $scope.showDetails = function(drugId) {
+        location.href = '/#/drugs/' + drugId;
+    };
+    
+    $scope.calculateDose = function(drugId) {
+        location.href = '/#/drugs/dose/' + drugId;
+    };
 
 });
 
@@ -27,5 +35,27 @@ drugDoseFrameworkControllers.controller('DrugDetailsCtrl', function($scope, $rou
     $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
         $scope.drug = data;
     });
+
+});
+
+drugDoseFrameworkControllers.controller('DrugDoseCtrl', function($scope, $routeParams, $http) {
+        
+    $scope.shouldShowDelete = false;
+    $scope.shouldShowReorder = false;
+    $scope.listCanSwipe = true;
+
+    $scope.drug = null;
+
+    $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
+        $scope.drug = data;
+    });
+    
+    $scope.dose = null;
+    $scope.weight = null;
+    
+    $scope.calculateDose = function () {
+        $scope.dose = 'xx.xx [mg]';
+        $scope.weight = 'xx.xx [kg]';
+    };
 
 });

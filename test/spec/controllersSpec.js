@@ -47,6 +47,43 @@ describe('Drug Dose Framework controllers', function() {
         });
     });
     
+    describe('DrugDoseCtrl', function () {
+        
+        var scope, $httpBackend;
+
+        beforeEach(module('ngRoute'));
+        beforeEach(module('DrugDoseFrameworkControllers'));
+        beforeEach(inject(function (_$httpBackend_, $rootScope, $controller, $routeParams) {
+            $httpBackend = _$httpBackend_;
+            $httpBackend.expectGET('data/xyz.json').respond({id: 'xyz'});
+
+            $routeParams.drugId = 'xyz';
+            scope = $rootScope.$new();
+            $controller('DrugDoseCtrl', {$scope: scope});
+        }));
+
+        it('should fetch drug detail', function () {
+            expect(scope.drug).toBeNull();
+            $httpBackend.flush();
+            expect(scope.drug).toEqual({id: 'xyz'});
+        });
+        
+        describe('calculate method', function() {
+            
+            it('should fill dose and weight with placeholders', function() {
+                
+                expect(scope.dose).toBeNull();
+                expect(scope.weight).toBeNull();
+                scope.calculateDose();
+                expect(scope.dose).toEqual('xx.xx [mg]');
+                expect(scope.weight).toEqual('xx.xx [kg]');
+                
+            });
+            
+        });
+        
+    });
+    
     var example = [
         {
             name: "Drug one",

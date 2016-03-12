@@ -1,1 +1,6 @@
 /* Your application styles go here */
+
+.drug-actions a {
+    margin-right: 1em;
+    background-color: red;
+}

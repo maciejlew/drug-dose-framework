@@ -28,6 +28,9 @@
         }).when('/drugs/:drugId', {
             templateUrl: 'partials/drug-details.html',
             controller: 'DrugDetailsCtrl'
+        }).when('/drugs/dose/:drugId', {
+            templateUrl: 'partials/drug-dose.html',
+            controller: 'DrugDoseCtrl'
         }).otherwise({
             redirectTo: '/drugs'
         });

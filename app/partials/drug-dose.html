@@ -1,0 +1,19 @@
+<ion-content ng-controller="DrugDoseCtrl">
+    <div class="list list-inset padding">
+        <div class="item">
+            {{drug.name}}
+        </div>
+        <label class="item item-input">
+            <input type="number" placeholder="Weight [kg]">
+        </label>
+        <button class="button button-block button-positive" ng-click="calculateDose()">
+            Calculate
+        </button>
+        <div class="item">
+            Weight: {{weight}}
+        </div>
+        <div class="item">
+            Calculated dose: {{dose}}
+        </div>
+    </div>
+</ion-content>
