@@ -13,8 +13,8 @@ function DoseComplexParameters() {
             throw new TypeError('Range parameter value must be numeric!');
         }
     };
-    var checkDoseType = function(range) {
-        if (checkType(range) === false) {
+    var checkDoseType = function(dose) {
+        if (checkType(dose) === false) {
             throw new TypeError('Dose parameter value must be numeric!');
         }
     };
