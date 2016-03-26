@@ -137,5 +137,13 @@ describe('Dose Complex Parameters', function() {
         expect(function() {dose_parameters.setRanges(ranges_surplus);}).toThrow(expected_exception);
         expect(dose_parameters.getRanges()).toEqual([]);
     });
+    
+    it('should not set ranges when ranges are not in ascending order', function() {
+        var dose_parameters = new DoseComplexParameters();
+        var ranges = [new Number(1), new Number(2), new Number(1.5)];
+        var expected_exception = new RangeError('Ranges are not in ascending order!');
+        expect(dose_parameters.getRanges()).toEqual([]);
+        expect(function() {dose_parameters.setRanges(ranges);}).toThrow(expected_exception);
+    });
 
 });

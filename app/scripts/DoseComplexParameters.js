@@ -28,11 +28,17 @@ function DoseComplexParameters() {
             throw new RangeError('Dose parameters amount and ranges parameters differs!');
         }
     };
+    var checkRangesOrder = function(ranges, tmp, i) {
+        if (i !== 0 && ranges[i] <= tmp[i-1]) {
+            throw new RangeError('Ranges are not in ascending order!');
+        }
+    };
     this.setRanges = function(ranges) {
         checkRangesAmount(ranges);
         var tmp = [];
         for (var i = 0 ; i < ranges.length ; i++) {
             checkRangeType(ranges[i]);
+            checkRangesOrder(ranges, tmp, i);
             if (ranges[i] instanceof Number) {
                 tmp.push(ranges[i]);
             } else {
