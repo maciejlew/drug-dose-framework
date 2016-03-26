@@ -23,12 +23,16 @@ function DoseComplexStrategy() {
         var x2 = ranges.length - 1;
         
         var x = null;
+        var closest_left = null;
         
         while (x1 < x2) {
             x = Math.floor((x1 + x2) / 2);
+            dump(x);
             if (ranges[x] < weight) {
                 x1 = x + 1;
+                closest_left = x;
             } else {
+                closest_left = x - 1;
                 x2 = x;
             }
         }
@@ -37,7 +41,7 @@ function DoseComplexStrategy() {
             dose.setMin(doses[x1]);
             dose.setMax(doses[x1]);
         } else {
-            var a = (doses[x1] - doses[x])/(ranges[x1] - ranges[x]);
+            var a = (doses[x1] - doses[closest_left])/(ranges[x1] - ranges[closest_left]);
             var b = doses[x1] - a * ranges[x1];
             var y = a * weight + b;
             dose.setMin(y);

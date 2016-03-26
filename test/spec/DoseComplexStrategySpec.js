@@ -47,6 +47,10 @@ describe('Dose Complex Strategy', function() {
         dose = dose_strategy.calculateDose(12.5);
         expect(dose.getMin()).toEqual(0.75);
         expect(dose.getMax()).toEqual(0.75);
+        
+        dose = dose_strategy.calculateDose(13.5);
+        expect(dose.getMin()).toEqual(1.125);
+        expect(dose.getMax()).toEqual(1.125);
     });
     
     it('should throw exception when weight is out of range', function() {
