@@ -27,7 +27,6 @@ function DoseComplexStrategy() {
         
         while (x1 < x2) {
             x = Math.floor((x1 + x2) / 2);
-            dump(x);
             if (ranges[x] < weight) {
                 x1 = x + 1;
                 closest_left = x;
