@@ -337,7 +337,12 @@ module.exports = function (grunt) {
           '<%= yeoman.test %>/mock/**/*.js',
           '<%= yeoman.test %>/spec/**/*.js'
         ],
-        autoWatch: false,
+        autoWatch: true,
+        plugins: [
+            'karma-jasmine',
+            'karma-coverage',
+            'karma-phantomjs-launcher'
+        ],
         reporters: ['dots', 'coverage'],
         port: 8080,
         singleRun: false,
@@ -356,7 +361,7 @@ module.exports = function (grunt) {
         // Change this to 'Chrome', 'Firefox', etc. Note that you will need
         // to install a karma launcher plugin for browsers other than Chrome.
         browsers: ['PhantomJS'],
-        background: true
+        background: false
       },
       continuous: {
         browsers: ['PhantomJS'],
