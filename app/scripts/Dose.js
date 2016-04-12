@@ -11,7 +11,7 @@ function Dose() {
         if (value < 0) {
             throw new RangeError('Dose value can not be negative!');
         }
-    }
+    };
     this.setMin = function(min) {
         checkType(min);
         checkRange(min);
