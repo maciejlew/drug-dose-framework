@@ -1,3 +1,4 @@
+'use strict';
 function DoseStrategy() {
     var _dose_parameters = null;
     this.checkWeightType = function(weight) {

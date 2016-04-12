@@ -1,3 +1,4 @@
+'use strict';
 function DoseSimpleParameters() {
     var _a_min = null;
     var _a_max = null;

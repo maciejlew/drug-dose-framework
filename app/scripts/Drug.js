@@ -1,3 +1,4 @@
+'use strict';
 function Drug() {
     var _name = null;
     var _description = null;

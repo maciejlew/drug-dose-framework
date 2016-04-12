@@ -1,3 +1,4 @@
+'use strict';
 function DrugFactory() {
     var getDoseParametersFromJson = function(json) {
         var parameters = null;

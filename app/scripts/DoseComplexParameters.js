@@ -1,3 +1,4 @@
+'use strict';
 function DoseComplexParameters() {
     var _ranges = [];
     var _doses = [];

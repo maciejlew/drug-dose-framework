@@ -1,3 +1,4 @@
+'use strict';
 function DoseStrategyFactory() {
     this.getStrategy = function (dose_parameters) {
         if (dose_parameters instanceof DoseSimpleParameters) {

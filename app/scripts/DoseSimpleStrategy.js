@@ -1,3 +1,4 @@
+'use strict';
 function DoseSimpleStrategy() {
     this.checkDoseParameters = function(dose_parameters) {
         if (!(dose_parameters instanceof DoseSimpleParameters)) {

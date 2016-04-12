@@ -1,3 +1,4 @@
+'use strict';
 function Dose() {
     var _min = null;
     var _max = null;

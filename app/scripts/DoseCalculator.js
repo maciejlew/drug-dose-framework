@@ -1,3 +1,4 @@
+'use strict';
 function DoseCalculator() {
     this.strategy = null;
     this.setStrategy = function(strategy) {
