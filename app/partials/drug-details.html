@@ -5,15 +5,15 @@
         can-swipe="listCanSwipe">
         <ion-item class="item-icon-left">
             <i class="icon ion-erlenmeyer-flask"></i>
-            Drug: {{drug.name}}
+            Drug: {{drug.getName()}}
         </ion-item>
         <ion-item class="item-icon-left">
             <i class="icon ion-clipboard"></i>
-            Description: {{drug.description}}
+            Description: {{drug.getDescription()}}
         </ion-item>
         <ion-item class="item-icon-left">
             <i class="icon ion-funnel"></i>
-            Type: {{drug.dose.type}}
+            Type: {{drug.getType()}}
         </ion-item>
     </ion-list>
 </ion-content>

@@ -33,7 +33,8 @@ drugDoseFrameworkControllers.controller('DrugDetailsCtrl', function($scope, $rou
     $scope.drug = null;
 
     $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
-        $scope.drug = data;
+        var factory = new DrugFactory();
+        $scope.drug = factory.getDrugFromJson(data);
     });
 
 });
@@ -47,7 +48,8 @@ drugDoseFrameworkControllers.controller('DrugDoseCtrl', function($scope, $routeP
     $scope.drug = null;
 
     $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
-        $scope.drug = data;
+        var factory = new DrugFactory();
+        $scope.drug = factory.getDrugFromJson(data);
     });
     
     $scope.dose = null;
