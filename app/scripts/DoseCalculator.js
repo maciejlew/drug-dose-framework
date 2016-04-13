@@ -1,10 +1,17 @@
 'use strict';
 function DoseCalculator() {
-    this.strategy = null;
-    this.setStrategy = function(strategy) {
-        this.strategy = strategy;
+    var _strategy = null;
+    var checkStrategy = function(strategy) {
+        if (!(strategy instanceof DoseSimpleStrategy) && !(strategy instanceof DoseComplexStrategy)) {
+            throw new TypeError('Unknown strategy type!');
+        }
     };
-    this.calculate = function(doseParameters, weight) {
-        return this.strategy.calculate(doseParameters, weight);
+    this.setStrategy = function(strategy) {
+        checkStrategy(strategy);
+        _strategy = strategy;
+    };
+    this.calculate = function(weight) {
+        checkStrategy(_strategy);
+        return _strategy.calculateDose(weight);
     };
 }
