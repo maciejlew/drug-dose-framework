@@ -13,18 +13,10 @@ drugDoseFrameworkControllers.controller('DrugListCtrl', function($scope, $http) 
     $http.get('data/example.json').success(function(data) {
         $scope.drugs = data;
     });
-    
-    $scope.showDetails = function(drugId) {
-        location.href = '/#/drugs/' + drugId;
-    };
-    
-    $scope.calculateDose = function(drugId) {
-        location.href = '/#/drugs/dose/' + drugId;
-    };
 
 });
 
-drugDoseFrameworkControllers.controller('DrugDetailsCtrl', function($scope, $routeParams, $http) {
+drugDoseFrameworkControllers.controller('DrugDetailsCtrl', function($scope, $state, $http) {
         
     $scope.shouldShowDelete = false;
     $scope.shouldShowReorder = false;
@@ -32,14 +24,14 @@ drugDoseFrameworkControllers.controller('DrugDetailsCtrl', function($scope, $rou
 
     $scope.drug = null;
 
-    $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
+    $http.get('data/' + $state.params.drugId + '.json').success(function(data) {
         var factory = new DrugFactory();
         $scope.drug = factory.getDrugFromJson(data);
     });
 
 });
 
-drugDoseFrameworkControllers.controller('DrugDoseCtrl', function($scope, $routeParams, $http) {
+drugDoseFrameworkControllers.controller('DrugDoseCtrl', function($scope, $state, $http) {
     
     var drug_factory = new DrugFactory();
     var calculator = new DoseCalculator();
@@ -50,7 +42,7 @@ drugDoseFrameworkControllers.controller('DrugDoseCtrl', function($scope, $routeP
 
     $scope.drug = null;
 
-    $http.get('data/' + $routeParams.drugId + '.json').success(function(data) {
+    $http.get('data/' + $state.params.drugId + '.json').success(function(data) {
         $scope.drug = drug_factory.getDrugFromJson(data);
         var strategy_factory = new DoseStrategyFactory();
         var strategy = strategy_factory.getStrategy($scope.drug.getParameters());

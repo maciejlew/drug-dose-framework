@@ -1,7 +1,7 @@
 'use strict';
 (function(){
     
-    var dependencies = ['ionic', 'ngRoute', 'DrugDoseFrameworkControllers'];
+    var dependencies = ['ionic', 'ui.router', 'DrugDoseFrameworkControllers'];
     
     var app = angular.module('DrugDoseFrameworkApp', dependencies).run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -21,19 +21,22 @@
         });
     });
     
-    app.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/drugs', {
+    
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider.state('drugs', {
+            url: '/drugs/', 
             templateUrl: 'partials/drug-list.html',
             controller: 'DrugListCtrl'
-        }).when('/drugs/:drugId', {
+        }).state('drug-details', {
+            url: '/drugs/:drugId', 
             templateUrl: 'partials/drug-details.html',
             controller: 'DrugDetailsCtrl'
-        }).when('/drugs/dose/:drugId', {
+        }).state('drug-dose', {
+            url: '/drugs/dose/:drugId', 
             templateUrl: 'partials/drug-dose.html',
             controller: 'DrugDoseCtrl'
-        }).otherwise({
-            redirectTo: '/drugs'
         });
-    }]);
+        $urlRouterProvider.otherwise("/drugs/");
+    });
     
 })();

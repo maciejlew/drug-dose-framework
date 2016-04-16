@@ -25,51 +25,6 @@ describe('Drug Dose Framework controllers', function() {
 
     });
     
-    describe('DrugDetailsCtrl', function () {
-        
-        var scope, $httpBackend;
-
-        beforeEach(module('ngRoute'));
-        beforeEach(module('DrugDoseFrameworkControllers'));
-        beforeEach(inject(function (_$httpBackend_, $rootScope, $controller, $routeParams) {
-            $httpBackend = _$httpBackend_;
-            $httpBackend.expectGET('data/xyz.json').respond(example_drug);
-
-            $routeParams.drugId = 'xyz';
-            scope = $rootScope.$new();
-            $controller('DrugDetailsCtrl', {$scope: scope});
-        }));
-
-        it('should fetch drug detail', function () {
-            expect(scope.drug).toBeNull();
-            $httpBackend.flush();
-            expect(scope.drug.getName()).toEqual(example_drug.name);
-        });
-    });
-    
-    describe('DrugDoseCtrl', function () {
-        
-        var scope, $httpBackend;
-
-        beforeEach(module('ngRoute'));
-        beforeEach(module('DrugDoseFrameworkControllers'));
-        beforeEach(inject(function (_$httpBackend_, $rootScope, $controller, $routeParams) {
-            $httpBackend = _$httpBackend_;
-            $httpBackend.expectGET('data/xyz.json').respond(example_drug);
-
-            $routeParams.drugId = 'xyz';
-            scope = $rootScope.$new();
-            $controller('DrugDoseCtrl', {$scope: scope});
-        }));
-
-        it('should fetch drug detail', function () {
-            expect(scope.drug).toBeNull();
-            $httpBackend.flush();
-            expect(scope.drug.getName()).toEqual(example_drug.name);
-        });
-        
-    });
-    
     var example = [
         {
             name: "Drug one",
@@ -84,16 +39,5 @@ describe('Drug Dose Framework controllers', function() {
             description: "Description of a Drug3"
         }
     ];
-    
-    var example_drug = {
-        id: "xyz",
-        name: "Xyz",
-        description: "Description of a Xyz",
-        dose: {
-            type: "simple",
-            a: 1,
-            b: 2
-        }
-    };
     
 });

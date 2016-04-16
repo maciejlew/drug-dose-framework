@@ -26,7 +26,6 @@
         <script src="bower_components/ionic/release/js/ionic.js"></script>
         <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
         <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
-        <script src="bower_components/angular-route/angular-route.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -52,12 +51,6 @@
         <!-- endbuild -->
     </head>
     <body ng-app="DrugDoseFrameworkApp">
-
-    <ion-pane>
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">Drug Dose Framework</h1>
-        </ion-header-bar>
-        <div ng-view></div>
-    </ion-pane>
-</body>
+        <ion-nav-view animation="slide-left-right"></ion-nav-view>
+    </body>
 </html>
