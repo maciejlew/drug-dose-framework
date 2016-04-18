@@ -1,1 +1,17 @@
-/* Empty. Add your own CSS if you like */
+.modal-content {
+    text-align: center; 
+    font-size: 2em;
+}
+
+.modal-content div,
+.modal-content button {
+    margin: 1em 0;
+}
+
+#dose-min {
+    color: green;
+}
+
+#dose-max {
+    color: red;
+}
