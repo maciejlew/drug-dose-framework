@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: Drug Dose Framework 0.1\n"
+"Language: pl_PL\n"
+
+#: app/partials/drug-list.html:6
+msgid "Type drug name"
+msgstr "Wpisz nazwę leku"
+
+#: app/partials/drug-dose.html:14
+msgid "calculate"
+msgstr "oblicz"
+
+#: app/partials/drug-list.html:20
+msgid "calculate dose"
+msgstr "oblicz dawkę"
+
+#: app/partials/drug-dose-exception.html:9
+#: app/partials/drug-dose-result.html:12
+msgid "close"
+msgstr "zamknij"
+
+#: app/partials/drug-details.html:13
+msgid "description"
+msgstr "opis"
+
+#: app/partials/drug-dose-result.html:3
+msgid "dose"
+msgstr "dawka"
+
+#: app/partials/drug-details.html:9
+msgid "drug"
+msgstr "lek"
+
+#: app/partials/drug-dose-exception.html:3
+msgid "exception occured"
+msgstr "wystąpił wyjątek"
+
+#: app/partials/drug-list.html:17
+msgid "show details"
+msgstr "pokaż szczegóły"
+
+#: app/partials/drug-details.html:17
+msgid "type"
+msgstr "typ"
+
+#: app/partials/drug-dose.html:10
+msgid "weight"
+msgstr "waga"
