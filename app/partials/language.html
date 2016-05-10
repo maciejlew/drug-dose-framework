@@ -1,0 +1,15 @@
+<ion-view view-title="Language settings">
+<ion-content ng-controller="LanguageCtrl">
+    <ion-list>
+        <ion-radio ng-model="language" ng-value="'en_EN'" ng-change="changeLanguage()">
+            english
+        </ion-radio>
+        <ion-radio ng-model="language" ng-value="'pl_PL'" ng-change="changeLanguage()">
+            polish
+        </ion-radio>
+        <ion-radio ng-model="language" ng-value="'de_DE'" ng-change="changeLanguage()">
+            german
+        </ion-radio>
+    </ion-list>
+</ion-content>
+</ion-view>

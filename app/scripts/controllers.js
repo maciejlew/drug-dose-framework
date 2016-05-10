@@ -7,7 +7,7 @@ drugDoseFrameworkControllers.controller('DrugListCtrl', function ($scope, $http)
     $scope.shouldShowDelete = false;
     $scope.shouldShowReorder = false;
     $scope.listCanSwipe = true;
-
+    
     $scope.drugs = [];
 
     $http.get('data/example.json').success(function (data) {
@@ -96,5 +96,17 @@ drugDoseFrameworkControllers.controller('DrugDoseCtrl', function ($scope, $state
     $scope.$on('$destroy', function () {
         $scope.modal_exception.remove();
     });
+    
+});
+
+drugDoseFrameworkControllers.controller('LanguageCtrl', function ($scope, $state, gettextCatalog) {
+
+    $scope.language = window.localStorage.getItem('language');
+
+    $scope.changeLanguage = function() {
+        window.localStorage.setItem('language', $scope.language);
+        gettextCatalog.setCurrentLanguage($scope.language);
+        $state.go('drugs');
+    };
 
 });

@@ -5,14 +5,22 @@
 
     var app = angular.module('DrugDoseFrameworkApp', dependencies).run(function ($ionicPlatform, gettextCatalog) {
 
-        switch (window.navigator.language.substr(0, 2)) {
-            case 'pl':
-                gettextCatalog.setCurrentLanguage('pl_PL');
-                break;
-            case 'de':
-                gettextCatalog.setCurrentLanguage('de_DE');
-                break;
+        var language = 'en_EN';
+        if (window.localStorage.getItem('language')) {
+            language = window.localStorage.getItem('language');
+        } else {
+            switch (window.navigator.language.substr(0, 2)) {
+                case 'pl':
+                    language = 'pl_PL';
+                    break;
+                case 'de':
+                    language = 'de_DE';
+                    break;
+            }
+            localStorage.setItem('language', language);
         }
+        gettextCatalog.setCurrentLanguage(language);
+
 
         $ionicPlatform.ready(function () {
             if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -42,14 +50,22 @@
 
     app.config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider.state('drugs', {
+            cache: false,
             url: '/drugs/',
             templateUrl: 'partials/drug-list.html',
             controller: 'DrugListCtrl'
         }).state('drug-details', {
+            cache: false,
             url: '/drugs/:drugId',
             templateUrl: 'partials/drug-details.html',
             controller: 'DrugDetailsCtrl'
+        }).state('language', {
+            cache: false,
+            url: '/drugs/language/',
+            templateUrl: 'partials/language.html',
+            controller: 'LanguageCtrl'
         }).state('drug-dose', {
+            cache: false,
             url: '/drugs/dose/:drugId',
             templateUrl: 'partials/drug-dose.html',
             controller: 'DrugDoseCtrl'

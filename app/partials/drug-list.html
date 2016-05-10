@@ -12,7 +12,6 @@
         can-swipe="listCanSwipe">
         <ion-item ng-repeat="drug in drugs | filter: query" class="item-icon-right">
             {{drug.name}}
-            </ion-reorder-button>
             <ion-option-button class="button-balanced" ui-sref="drug-details({drugId: drug.id})">
                 <i class="ion-search" translate>show details</i> 
             </ion-option-button>
