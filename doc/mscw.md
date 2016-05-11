@@ -14,7 +14,7 @@
 - program icon
 
 ## COULD have:
-- multi-language support
+- multi-language support [0.2.0]
 - searching history
 - dose calculation history
 - function to let users change language at run time
