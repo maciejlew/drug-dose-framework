@@ -8,7 +8,7 @@ function DoseStrategy() {
             throw new RangeError('Weight must be positive number!');
         }
     };
-    this.checkDoseParameters = function(dose_parameters) {
+    this.checkDoseParameters = function() {
         throw new Error('Abstract method!');
     };
     this.setDoseParameters = function (dose_parameters) {
@@ -18,7 +18,7 @@ function DoseStrategy() {
     this.getDoseParameters = function () {
         return _dose_parameters;
     };
-    this.calculateDose = function(weight) {
+    this.calculateDose = function() {
         throw new Error('Abstract method!');
     };
 }
