@@ -3,7 +3,7 @@ function Dose() {
     var _min = null;
     var _max = null;
     var checkType = function(value) {
-        if (!(value instanceof Number) && !(typeof value === 'number')) {
+        if (!(value instanceof Number) && typeof value !== 'number') {
             throw new TypeError('Dose value must be numeric!');
         }
     };

@@ -3,7 +3,7 @@ function DoseComplexParameters() {
     var _ranges = [];
     var _doses = [];
     var checkType = function(value) {
-        if (!(value instanceof Number) && !(typeof value === 'number')) {
+        if (!(value instanceof Number) && typeof value !== 'number') {
             return false;
         } else {
             return true;

@@ -4,7 +4,7 @@ function DoseSimpleParameters() {
     var _a_max = null;
     var _b = null;
     var checkType = function(value) {
-        if (!(value instanceof Number) && !(typeof value === 'number')) {
+        if (!(value instanceof Number) && typeof value !== 'number') {
             throw new TypeError('Dose parameter value must be numeric!');
         }
     };
