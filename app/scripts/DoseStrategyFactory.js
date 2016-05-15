@@ -8,6 +8,6 @@ function DoseStrategyFactory() {
         } else {
             throw new TypeError('Unknown dose calculation strategy!');
         }
-    }
+    };
 }
 DoseStrategyFactory.prototype = new DoseStrategyFactory();
