@@ -30,14 +30,18 @@ function Drug() {
         }
     };
     var checkParametersType = function(parameters) {
-        if (!(parameters instanceof DoseComplexParameters) 
-            && !(parameters instanceof DoseSimpleParameters)) {
+        if (!(parameters instanceof DoseComplexParameters) && !(parameters instanceof DoseSimpleParameters)) {
             throw new TypeError('Drug parameters type is not valid!');
         }
     };
+    var checkSimpleTypeParametersMissMatch = function(parameters) {
+        return _type == 'simple' && parameters instanceof DoseComplexParameters;
+    };
+    var checkComplexTypeParametersMissMatch = function(parameters) {
+        return _type == 'complex' && parameters instanceof DoseSimpleParameters;
+    };
     var checkParametersMatchType = function(parameters) {
-        if ((_type == 'simple' && (parameters instanceof DoseComplexParameters)) 
-            || (_type == 'complex' && (parameters instanceof DoseSimpleParameters))) {
+        if (checkSimpleTypeParametersMissMatch(parameters) || checkComplexTypeParametersMissMatch(parameters)) {
             throw new Error('Drug parameters type does not match drug type!');
         }
     };
