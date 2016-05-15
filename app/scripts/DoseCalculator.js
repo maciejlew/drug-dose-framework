@@ -15,3 +15,4 @@ function DoseCalculator() {
         return _strategy.calculateDose(weight);
     };
 }
+DoseCalculator.prototype = new DoseCalculator();
