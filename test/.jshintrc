@@ -30,6 +30,16 @@
     "inject": false,
     "it": false,
     "jasmine": false,
-    "spyOn": false
+    "spyOn": false,
+    "DoseCalculator": false,
+    "DoseComplexParameters": false,
+    "DoseComplexStrategy": false,
+    "Dose": false,
+    "DoseSimpleStrategy": false,
+    "DoseSimpleParameters": false,
+    "DoseStrategy": false,
+    "DoseStrategyFactory": false,
+    "DrugFactory": false,
+    "Drug": false
   }
 }

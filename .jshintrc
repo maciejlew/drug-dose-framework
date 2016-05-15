@@ -21,6 +21,16 @@
   "globals": {
     "angular": false,
     "cordova": false,
-    "StatusBar": false
+    "StatusBar": false,
+    "DoseCalculator": false,
+    "DoseComplexParameters": false,
+    "DoseComplexStrategy": false,
+    "Dose": false,
+    "DoseSimpleStrategy": false,
+    "DoseSimpleParameters": false,
+    "DoseStrategy": false,
+    "DoseStrategyFactory": false,
+    "DrugFactory": false,
+    "Drug": false
   }
 }
