@@ -70,7 +70,7 @@
             templateUrl: 'partials/drug-dose.html',
             controller: 'DrugDoseCtrl'
         });
-        $urlRouterProvider.otherwise("/drugs/");
+        $urlRouterProvider.otherwise('/drugs/');
     });
 
 })();

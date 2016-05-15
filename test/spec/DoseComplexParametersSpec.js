@@ -39,7 +39,7 @@ describe('Dose Complex Parameters', function() {
     
     it('should not set ranges when at least one range is not a number', function() {
         var dose_parameters = new DoseComplexParameters();
-        var invalid_ranges = [new Number(1), new Number(2), "3"];
+        var invalid_ranges = [new Number(1), new Number(2), '3'];
         var expected_exception = new TypeError('Range parameter value must be numeric!');
         expect(dose_parameters.getRanges()).toEqual([]);
         expect(function() {dose_parameters.setRanges(invalid_ranges);}).toThrow(expected_exception);
@@ -83,7 +83,7 @@ describe('Dose Complex Parameters', function() {
     
     it('should not set doses when at least one range is not a number', function() {
         var dose_parameters = new DoseComplexParameters();
-        var invalid_doses = [new Number(1), new Number(2), "3"];
+        var invalid_doses = [new Number(1), new Number(2), '3'];
         var expected_exception = new TypeError('Dose parameter value must be numeric!');
         expect(dose_parameters.getDoses()).toEqual([]);
         expect(function() {dose_parameters.setDoses(invalid_doses);}).toThrow(expected_exception);

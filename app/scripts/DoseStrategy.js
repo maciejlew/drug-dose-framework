@@ -9,7 +9,7 @@ function DoseStrategy() {
         }
     };
     this.checkDoseParameters = function(dose_parameters) {
-        throw new Error("Abstract method!");
+        throw new Error('Abstract method!');
     };
     this.setDoseParameters = function (dose_parameters) {
         this.checkDoseParameters(dose_parameters);
@@ -19,7 +19,7 @@ function DoseStrategy() {
         return _dose_parameters;
     };
     this.calculateDose = function(weight) {
-        throw new Error("Abstract method!");
+        throw new Error('Abstract method!');
     };
 }
 DoseStrategy.prototype = new DoseStrategy();

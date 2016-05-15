@@ -5,13 +5,13 @@ describe('Dose Strategy', function() {
     it('should throw an exception when setting parameters', function() {
         var dose_strategy = new DoseStrategy();
         var dose_parameters = new DoseSimpleParameters();
-        var expected_exception = new Error("Abstract method!");
+        var expected_exception = new Error('Abstract method!');
         expect(function() {dose_strategy.setDoseParameters(dose_parameters);}).toThrow(expected_exception);
     });
     
     it('should throw an exception when calculating dose', function() {
         var dose_strategy = new DoseStrategy();
-        var expected_exception = new Error("Abstract method!");
+        var expected_exception = new Error('Abstract method!');
         expect(function() {dose_strategy.calculateDose(new Number(10));}).toThrow(expected_exception);
     });
     

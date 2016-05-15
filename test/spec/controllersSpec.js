@@ -27,16 +27,16 @@ describe('Drug Dose Framework controllers', function() {
     
     var example = [
         {
-            name: "Drug one",
-            description: "Description of a Drug1"
+            name: 'Drug one',
+            description: 'Description of a Drug1'
         },
         {
-            name: "Drug two",
-            description: "Description of a Drug2"
+            name: 'Drug two',
+            description: 'Description of a Drug2'
         },
         {
-            name: "Drug three",
-            description: "Description of a Drug3"
+            name: 'Drug three',
+            description: 'Description of a Drug3'
         }
     ];
     
