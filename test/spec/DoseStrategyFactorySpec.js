@@ -20,7 +20,7 @@ describe('Dose Strategy Factory', function() {
         var dose_strategy_factory = new DoseStrategyFactory();
         var dose_parameters = { type: 'unknown' };
         var expected_exception = new TypeError('Unknown dose calculation strategy!');
-        expect(function() {dose_strategy_factory.getStrategy(dose_parameters)}).toThrow(expected_exception);
+        expect(function() {dose_strategy_factory.getStrategy(dose_parameters);}).toThrow(expected_exception);
     });
     
 });
