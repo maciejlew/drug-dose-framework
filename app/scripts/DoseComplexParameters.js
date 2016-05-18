@@ -3,11 +3,7 @@ function DoseComplexParameters() {
     var _ranges = [];
     var _doses = [];
     var checkType = function(value) {
-        if (!(value instanceof Number) && typeof value !== 'number') {
-            return false;
-        } else {
-            return true;
-        }
+        return typeof value === 'number';
     };
     var checkRangeType = function(range) {
         if (checkType(range) === false) {
@@ -40,11 +36,7 @@ function DoseComplexParameters() {
         for (var i = 0 ; i < ranges.length ; i++) {
             checkRangeType(ranges[i]);
             checkRangesOrder(ranges, tmp, i);
-            if (ranges[i] instanceof Number) {
-                tmp.push(ranges[i]);
-            } else {
-                tmp.push(new Number(ranges[i]));
-            }
+            tmp.push(ranges[i]);
         }
         _ranges = tmp;
     };
@@ -53,11 +45,7 @@ function DoseComplexParameters() {
         var tmp = [];
         for (var i = 0 ; i < doses.length ; i++) {
             checkDoseType(doses[i]);
-            if (doses[i] instanceof Number) {
-                tmp.push(doses[i]);
-            } else {
-                tmp.push(new Number(doses[i]));
-            }
+            tmp.push(doses[i]);
         }
         _doses = tmp;
     };

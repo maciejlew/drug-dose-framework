@@ -18,9 +18,9 @@ describe('Drug Factory', function() {
         expect(drug.getName()).toEqual('Drug One');
         expect(drug.getDescription()).toEqual('Description of a Drug One');
         expect(drug.getType()).toEqual('simple');
-        expect(drug.getParameters().getAMin()).toEqual(new Number(1));
-        expect(drug.getParameters().getAMax()).toEqual(new Number(1));
-        expect(drug.getParameters().getB()).toEqual(new Number(2));
+        expect(drug.getParameters().getAMin()).toEqual(1);
+        expect(drug.getParameters().getAMax()).toEqual(1);
+        expect(drug.getParameters().getB()).toEqual(2);
     });
     
     it('should convert simple drug two example to drug instance', function() {
@@ -39,9 +39,9 @@ describe('Drug Factory', function() {
         expect(drug.getName()).toEqual('Drug Two');
         expect(drug.getDescription()).toEqual('Description of a Drug Two');
         expect(drug.getType()).toEqual('simple');
-        expect(drug.getParameters().getAMin()).toEqual(new Number(0.5));
-        expect(drug.getParameters().getAMax()).toEqual(new Number(0.6));
-        expect(drug.getParameters().getB()).toEqual(new Number(10));
+        expect(drug.getParameters().getAMin()).toEqual(0.5);
+        expect(drug.getParameters().getAMax()).toEqual(0.6);
+        expect(drug.getParameters().getB()).toEqual(10);
     });
     
     it('should convert complex drug three example to drug instance', function() {

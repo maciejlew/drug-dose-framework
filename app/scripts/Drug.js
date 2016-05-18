@@ -5,7 +5,7 @@ function Drug() {
     var _type = null;
     var _parameters = null;
     var isStringType = function(value) {
-        return (value instanceof String) || (typeof value === 'string');
+        return typeof value === 'string';
     };
     var checkNameType = function(name) {
         if (!isStringType(name)) {
@@ -47,27 +47,15 @@ function Drug() {
     };
     this.setName = function(name) {
         checkNameType(name);
-        if (name instanceof String) {
-            _name = name;
-        } else if (typeof name === 'string') {
-            _name = new String(name);
-        }
+        _name = name;
     };
     this.setDescription = function(description) {
         checkDescriptionType(description);
-        if (description instanceof String) {
-            _description = description;
-        } else if (typeof description === 'string') {
-            _description = new String(description);
-        }
+        _description = description;
     };
     this.setType = function(type) {
         checkTypeType(type);
-        if (type instanceof String) {
-            _type = type;
-        } else if (typeof type === 'string') {
-            _type = new String(type);
-        }
+        _type = type;
     };
     this.setParameters = function(parameters) {
         checkTypeIsSet();

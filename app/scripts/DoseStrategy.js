@@ -2,7 +2,7 @@
 function DoseStrategy() {
     var _dose_parameters = null;
     this.checkWeightType = function(weight) {
-        if (typeof weight !== 'number' && !(weight instanceof Number)) {
+        if (typeof weight !== 'number') {
             throw new TypeError('Weight must be number!');
         } else if (weight < 0) {
             throw new RangeError('Weight must be positive number!');

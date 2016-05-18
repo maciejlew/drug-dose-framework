@@ -59,7 +59,7 @@ drugDoseFrameworkControllers.controller('DrugDoseCtrl', function ($scope, $state
 
     $scope.calculateDose = function (input) {
         try {
-            $scope.dose = calculator.calculate(new Number(input.weight));
+            $scope.dose = calculator.calculate(parseFloat(input.weight));
             $scope.modal_dose.show();
         } catch (ex) {
             $scope.exception = ex.toString();

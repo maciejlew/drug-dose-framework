@@ -7,8 +7,6 @@ describe('Dose', function() {
         expect(dose.getMin()).toBeNull();
         dose.setMin(12);
         expect(dose.getMin()).toEqual(12);
-        dose.setMin(new Number(13));
-        expect(dose.getMin()).toEqual(13);
         dose.setMin(11.11);
         expect(dose.getMin()).toEqual(11.11);
     });
@@ -30,8 +28,6 @@ describe('Dose', function() {
         expect(dose.getMax()).toBeNull();
         dose.setMax(12);
         expect(dose.getMax()).toEqual(12);
-        dose.setMax(new Number(13));
-        expect(dose.getMax()).toEqual(13);
         dose.setMax(11.11);
         expect(dose.getMax()).toEqual(11.11);
     });
@@ -54,7 +50,6 @@ describe('Dose', function() {
         expect(dose.getMin()).toBeNull();
         expect(function() {dose.setMin(-1);}).toThrow(expected_exception);
         expect(function() {dose.setMin(-1.0);}).toThrow(expected_exception);
-        expect(function() {dose.setMin(new Number(-1));}).toThrow(expected_exception);
         expect(dose.getMin()).toBeNull();
     });
     
@@ -64,7 +59,6 @@ describe('Dose', function() {
         expect(dose.getMax()).toBeNull();
         expect(function() {dose.setMax(-1);}).toThrow(expected_exception);
         expect(function() {dose.setMax(-1.0);}).toThrow(expected_exception);
-        expect(function() {dose.setMax(new Number(-1));}).toThrow(expected_exception);
         expect(dose.getMax()).toBeNull();
     });
 

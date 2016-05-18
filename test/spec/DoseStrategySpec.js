@@ -12,7 +12,7 @@ describe('Dose Strategy', function() {
     it('should throw an exception when calculating dose', function() {
         var dose_strategy = new DoseStrategy();
         var expected_exception = new Error('Abstract method!');
-        expect(function() {dose_strategy.calculateDose(new Number(10));}).toThrow(expected_exception);
+        expect(function() {dose_strategy.calculateDose(10);}).toThrow(expected_exception);
     });
     
     it('should throw an exception when parsing non number weight', function() {
@@ -28,7 +28,6 @@ describe('Dose Strategy', function() {
         var dose_strategy = new DoseStrategy();
         dose_strategy.checkWeightType(1);
         dose_strategy.checkWeightType(1.0);
-        dose_strategy.checkWeightType(new Number(1));
     });
     
     it('should throw an exception when parsing negative number weight', function() {
@@ -36,7 +35,6 @@ describe('Dose Strategy', function() {
         var expected_exception = new RangeError('Weight must be positive number!');
         expect(function() {dose_strategy.checkWeightType(-1);}).toThrow(expected_exception);
         expect(function() {dose_strategy.checkWeightType(-1.0);}).toThrow(expected_exception);
-        expect(function() {dose_strategy.checkWeightType(new Number(-1));}).toThrow(expected_exception);
     });
     
 });

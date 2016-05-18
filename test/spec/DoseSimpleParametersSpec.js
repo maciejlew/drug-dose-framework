@@ -7,8 +7,6 @@ describe('Dose Simple Parameters', function() {
         expect(dose_parameters.getAMin()).toBeNull();
         dose_parameters.setAMin(12);
         expect(dose_parameters.getAMin()).toEqual(12);
-        dose_parameters.setAMin(new Number(13));
-        expect(dose_parameters.getAMin()).toEqual(13);
         dose_parameters.setAMin(11.11);
         expect(dose_parameters.getAMin()).toEqual(11.11);
     });
@@ -30,8 +28,6 @@ describe('Dose Simple Parameters', function() {
         expect(dose_parameters.getAMax()).toBeNull();
         dose_parameters.setAMax(12);
         expect(dose_parameters.getAMax()).toEqual(12);
-        dose_parameters.setAMax(new Number(13));
-        expect(dose_parameters.getAMax()).toEqual(13);
         dose_parameters.setAMax(11.11);
         expect(dose_parameters.getAMax()).toEqual(11.11);
     });
@@ -53,8 +49,6 @@ describe('Dose Simple Parameters', function() {
         expect(dose_parameters.getB()).toBeNull();
         dose_parameters.setB(12);
         expect(dose_parameters.getB()).toEqual(12);
-        dose_parameters.setB(new Number(13));
-        expect(dose_parameters.getB()).toEqual(13);
         dose_parameters.setB(11.11);
         expect(dose_parameters.getB()).toEqual(11.11);
     });
