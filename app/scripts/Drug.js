@@ -20,7 +20,7 @@ function Drug() {
     var checkTypeType = function(type) {
         if (!isStringType(type)) {
             throw new TypeError('Drug type value must be string!');
-        } else if (type != 'simple' && type != 'complex') {
+        } else if (type !== 'simple' && type !== 'complex') {
             throw new TypeError('Type must be simple or complex!');
         }
     };
@@ -35,10 +35,10 @@ function Drug() {
         }
     };
     var checkSimpleTypeParametersMissMatch = function(parameters) {
-        return _type == 'simple' && parameters instanceof DoseComplexParameters;
+        return _type === 'simple' && parameters instanceof DoseComplexParameters;
     };
     var checkComplexTypeParametersMissMatch = function(parameters) {
-        return _type == 'complex' && parameters instanceof DoseSimpleParameters;
+        return _type === 'complex' && parameters instanceof DoseSimpleParameters;
     };
     var checkParametersMatchType = function(parameters) {
         if (checkSimpleTypeParametersMissMatch(parameters) || checkComplexTypeParametersMissMatch(parameters)) {

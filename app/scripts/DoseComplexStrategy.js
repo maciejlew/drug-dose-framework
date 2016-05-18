@@ -37,7 +37,7 @@ function DoseComplexStrategy() {
             }
         }
         
-        if (ranges[x1] == weight) {
+        if (ranges[x1] === weight) {
             dose.setMin(doses[x1]);
             dose.setMax(doses[x1]);
         } else {
