@@ -4,6 +4,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2016-05-24
+### Added
+- program icon
+- program loading screen
+
+### Changed
+- internal representation of number and string values
+
 ## [0.2.0] - 2016-05-11
 ### Added
 - MSCW requirements document

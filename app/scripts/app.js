@@ -36,6 +36,11 @@
             if (window.StatusBar) {
                 StatusBar.styleDefault();
             }
+            
+            setTimeout(function() {
+                navigator.splashscreen.hide();
+            }, 100);
+            
         });
     });
 

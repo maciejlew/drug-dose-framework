@@ -10,8 +10,8 @@
 ## SHOULD have:
 - function to let user choose drugs set from device file storage
 - option to validate user's sets and show mistkes
-- loading screen
-- program icon
+- loading screen [0.3.0]
+- program icon [0.3.0]
 
 ## COULD have:
 - multi-language support [0.2.0]
