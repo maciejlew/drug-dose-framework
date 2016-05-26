@@ -5,6 +5,22 @@ msgstr ""
 "Project-Id-Version: Drug Dose Framework 0.1\n"
 "Language: pl_PL\n"
 
+#: app/partials/drug-details.html:1
+msgid "Drug Details"
+msgstr "Opis leku"
+
+#: app/partials/drug-dose.html:1
+msgid "Drug Dose"
+msgstr "Dawkowanie leku"
+
+#: app/partials/drug-list.html:1
+msgid "Drug List"
+msgstr "Lista leków"
+
+#: app/partials/language.html:1
+msgid "Language settings"
+msgstr "Ustawienia językowe"
+
 #: app/partials/drug-list.html:6
 msgid "Type drug name"
 msgstr "Wpisz nazwę leku"
@@ -12,10 +28,6 @@ msgstr "Wpisz nazwę leku"
 #: app/partials/drug-dose.html:14
 msgid "calculate"
 msgstr "oblicz"
-
-#: app/partials/drug-list.html:20
-msgid "calculate dose"
-msgstr "oblicz dawkę"
 
 #: app/partials/drug-dose-exception.html:9
 #: app/partials/drug-dose-result.html:12
@@ -37,10 +49,6 @@ msgstr "lek"
 #: app/partials/drug-dose-exception.html:3
 msgid "exception occured"
 msgstr "wystąpił wyjątek"
-
-#: app/partials/drug-list.html:17
-msgid "show details"
-msgstr "pokaż szczegóły"
 
 #: app/partials/drug-details.html:17
 msgid "type"

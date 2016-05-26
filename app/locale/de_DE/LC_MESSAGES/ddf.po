@@ -5,6 +5,22 @@ msgstr ""
 "Project-Id-Version: Drug Dose Framework 0.1\n"
 "Language: de_DE\n"
 
+#: app/partials/drug-details.html:1
+msgid "Drug Details"
+msgstr "Arzneimittel Details"
+
+#: app/partials/drug-dose.html:1
+msgid "Drug Dose"
+msgstr "Arzneimittel Dosis"
+
+#: app/partials/drug-list.html:1
+msgid "Drug List"
+msgstr "Arzneimittel Liste"
+
+#: app/partials/language.html:1
+msgid "Language settings"
+msgstr "Spracheneinstellungen"
+
 #: app/partials/drug-list.html:6
 msgid "Type drug name"
 msgstr "Schreiben Sie die Medikamentennamen"
@@ -12,10 +28,6 @@ msgstr "Schreiben Sie die Medikamentennamen"
 #: app/partials/drug-dose.html:14
 msgid "calculate"
 msgstr "berechnen"
-
-#: app/partials/drug-list.html:20
-msgid "calculate dose"
-msgstr "berechnen Dosis"
 
 #: app/partials/drug-dose-exception.html:9
 #: app/partials/drug-dose-result.html:12
@@ -37,10 +49,6 @@ msgstr "Arzneimittel"
 #: app/partials/drug-dose-exception.html:3
 msgid "exception occured"
 msgstr "Ausnahme ist aufgetreten"
-
-#: app/partials/drug-list.html:17
-msgid "show details"
-msgstr "Details anzeigen"
 
 #: app/partials/drug-details.html:17
 msgid "type"
