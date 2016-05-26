@@ -1,4 +1,4 @@
-<ion-view view-title="Drug List">
+<ion-view view-title="{{'Drug List'|translate}}">
 <ion-content ng-controller="DrugListCtrl">
     <div class="list">
         <label class="item item-input item-floating-label">
@@ -10,14 +10,16 @@
         show-delete="shouldShowDelete"
         show-reorder="shouldShowReorder"
         can-swipe="listCanSwipe">
-        <ion-item ng-repeat="drug in drugs | filter: query" class="item-icon-right">
+        <ion-item ng-repeat="drug in drugs | filter: query" class="item-button-right">
             {{drug.name}}
-            <ion-option-button class="button-balanced" ui-sref="drug-details({drugId: drug.id})">
-                <i class="ion-search" translate>show details</i> 
-            </ion-option-button>
-            <ion-option-button class="button-royal" ui-sref="drug-dose({drugId: drug.id})">
-                <i class="ion-ios-settings" translate>calculate dose</i> 
-            </ion-option-button>
+            <div class="buttons">
+                <button class="button button-balanced" ui-sref="drug-details({drugId: drug.id})">
+                    <i class="ion-search"></i> 
+                </button>
+                <button class="button button-royal" ui-sref="drug-dose({drugId: drug.id})">
+                    <i class="ion-ios-settings"></i> 
+                </button>
+            </div>
         </ion-item>
     </ion-list>
 </ion-content>
