@@ -8,12 +8,12 @@
 - function to calculate valid doses for simple and complex dose schemas [0.1.0]
 
 ## SHOULD have:
-- function to let user choose drugs set from device file storage
-- option to validate user's sets and show mistkes
 - loading screen [0.3.0]
 - program icon [0.3.0]
 
 ## COULD have:
+- function to let user choose drugs set from device file storage
+- option to validate user's sets and show mistkes
 - multi-language support [0.2.0]
 - searching history
 - dose calculation history
